@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main()
+{
+    char operacao;
+    double numero1 ,numero2, resultado;
+
+    //Operação
+    printf("Bem Vindo(a) a calculadora!\n");
+    printf("Digite a operacao que deseja fazer (+, -, *, / ):\n");
+    scanf(" %c", &operacao);
+
+    // numero 1
+    printf("Digite o primeiro numero:");
+    scanf("%lf", &numero1);
+
+    // numero 2
+    printf("Digite o segundo numero:");
+    scanf("%lf", &numero2);
+    
+    //Estrutura condicional
+    switch(operacao) {
+        case '+':
+            resultado = numero1 + numero2;
+            break;
+
+        case '-':
+            resultado = numero1 - numero2;
+            break;
+
+        case '*':
+            resultado = numero1 * numero2;
+            break;
+
+        case '/':
+            if(numero2 == 0 ){
+                printf("Erro: Você escreveu uma operação Inválida!\n");
+                return 1;
+            }else{
+                resultado = numero1 / numero2;
+            } 
+            break;
+        default:
+            printf("Erro: você escreveu uma operação inválida");
+           return 1;
+    }
+
+
+
+    printf("%.2lf %c %.2lf = %.2lf\n", numero1, operacao, numero2, resultado);
+ 
+    return 0;
+}
